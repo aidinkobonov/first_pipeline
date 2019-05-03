@@ -1,4 +1,5 @@
 node {
+    properties([pipelineTriggers([pollSCM('* * * * *')])])
     stage("Pull Repo"){
         git 'git@github.com:aidinkobonov/cool_website.git'
     }
@@ -16,4 +17,3 @@ node {
 
     }
 }
-
