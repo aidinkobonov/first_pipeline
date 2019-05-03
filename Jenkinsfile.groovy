@@ -11,7 +11,7 @@ node {
         sh 'scp index.html ec2-user@${ENV}:/tmp'
     }
     stage("Copy index file"){
-        sh 'ssh ec2-user@${ENV} "sudo mv /tmp/index.html  /var/www/html/index.html" '
+        sh 'ssh ec2-user@${ENV} "sudo mv /tmp/index.html  /var/www/html/index.html"'
     stage("Restart Webserver"){
         sh 'ssh ec2-user@${ENV} sudo systemctl restart httpd'
 
